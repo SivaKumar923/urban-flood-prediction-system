@@ -1,10 +1,1 @@
-from flask import Flask, jsonify
-app = Flask(__name__)
-
-@app.route('/api/predict', methods=['POST'])
-def predict():
-    # Function to handle prediction requests
-    return jsonify({'prediction': 'flood risk height'})
-
-if __name__ == '__main__':
-    app.run(debug=True)
+from flask import Flask, request, jsonify\n\napp = Flask(__name__)\n\n@app.route('/predict', methods=['POST'])\ndef predict():\n    data = request.get_json()\n    # Logic for flood prediction goes here\n    # Example: prediction = model.predict(data)\n    prediction = {'flood_probability': 0.5}  # Dummy response\n    return jsonify(prediction)\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)

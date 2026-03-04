@@ -1,0 +1,10 @@
+# Requirements
+
+This project requires the following Python libraries:
+```
+numpy
+pandas
+scikit-learn
+flask
+matplotlib
+```
